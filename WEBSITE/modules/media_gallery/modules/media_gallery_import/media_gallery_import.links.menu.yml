@@ -1,0 +1,6 @@
+media_gallery_import.import_form:
+  title: 'Media Gallery Import'
+  description: 'Import galleries from Drupal 7'
+  parent: system.admin_config_media
+  route_name: media_gallery_import.import_form
+  weight: 1

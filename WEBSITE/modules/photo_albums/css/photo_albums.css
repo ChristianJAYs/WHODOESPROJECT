@@ -1,0 +1,66 @@
+.view-photo-albums * {
+  box-sizing: border-box;
+}
+
+.view-photo-albums {
+  box-sizing: border-box;
+}
+
+.view-photo-albums .view-content:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.view-photo-albums .views-row {
+  box-sizing: border-box;
+  float: left;
+  margin: 8px;
+  min-height: 280px;
+  width: 224px;
+}
+
+.view-photo-albums .views-row.protected .views-field-field-photos .field-content {
+  background: url(../images/padlock.png) center center;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+}
+
+.view-photo-albums .views-row .views-field-field-photos {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.view-photo-albums .views-row ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.view-photo-albums .views-row ul:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.view-photo-albums .views-row ul li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.view-photo-albums .views-row ul li a,
+.view-photo-albums .views-row ul li a.link {
+  border-bottom: none;
+}
+
+.view-photo-albums .views-row ul li a img {
+  display: block;
+}
+
+.view-photo-albums .views-row .views-field-title {
+  margin: 0 auto;
+  padding: 0 4px 4px 4px;
+  text-align: center;
+  width: 75%;
+}

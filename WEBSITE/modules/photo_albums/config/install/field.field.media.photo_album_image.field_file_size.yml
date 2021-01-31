@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_file_size
+    - media.type.photo_album_image
+id: media.photo_album_image.field_file_size
+field_name: field_file_size
+entity_type: media
+bundle: photo_album_image
+label: 'File Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: bytes
+field_type: integer

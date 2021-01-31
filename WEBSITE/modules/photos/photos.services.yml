@@ -1,0 +1,9 @@
+services:
+  photos.route_subscriber:
+    class: Drupal\photos\Routing\PhotosRouteSubscriber
+    arguments: ['@config.factory']
+    tags:
+      - { name: event_subscriber }
+  photos.upload:
+    class: Drupal\photos\PhotosUpload
+    arguments: ['@config.factory', '@entity_type.manager', '@file_system', '@messenger', '@module_handler', '@stream_wrapper_manager', '@transliteration']

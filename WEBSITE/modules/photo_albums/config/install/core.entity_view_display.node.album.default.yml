@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.album.body
+    - field.field.node.album.field_photos
+    - field.field.node.album.field_protect_album
+    - field.field.node.album.field_reset_password
+    - node.type.album
+  module:
+    - text
+    - user
+id: node.album.default
+targetEntityType: node
+bundle: album
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_photos:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_protect_album: true
+  field_reset_password: true
+  sharethis: true

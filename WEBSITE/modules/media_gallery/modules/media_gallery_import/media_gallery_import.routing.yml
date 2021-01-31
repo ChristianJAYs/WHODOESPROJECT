@@ -1,0 +1,7 @@
+media_gallery_import.import_form:
+  path: '/admin/config/media/media_gallery_import'
+  defaults:
+    _form: '\Drupal\media_gallery_import\Form\MediaGalleryImportForm'
+    _title: 'Media Gallery Import'
+  requirements:
+    _permission: 'administer site configuration'

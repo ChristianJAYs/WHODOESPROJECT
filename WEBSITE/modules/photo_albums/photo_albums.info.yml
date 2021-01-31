@@ -1,0 +1,22 @@
+name: 'Photo Albums'
+type: module
+description: 'Provide photo album content.'
+core: 8.x
+core_version_requirement: '^8 || ^9'
+package: Custom
+dependencies:
+  - menu_ui
+  - crop
+  - node
+  - user
+  - media
+  - pathauto
+  - field_group
+  - media_library
+  - focal_point
+  - colorbox
+
+# Information added by Drupal.org packaging script on 2020-06-17
+version: '1.0.2'
+project: 'photo_albums'
+datestamp: 1592379735

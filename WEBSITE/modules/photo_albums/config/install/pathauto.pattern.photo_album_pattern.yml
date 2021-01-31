@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: photo_album_pattern
+label: photo-album-pattern
+type: 'canonical_entities:node'
+pattern: 'photo-albums/album/[node:title]'
+selection_criteria:
+  969709c1-12c4-483e-9ed5-0b99dacebf96:
+    id: node_type
+    bundles:
+      album: album
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 969709c1-12c4-483e-9ed5-0b99dacebf96
+selection_logic: and
+weight: -5
+relationships: {  }

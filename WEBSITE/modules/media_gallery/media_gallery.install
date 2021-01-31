@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Media Gallery.
+ */
+
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Implements hook_uninstall().
+ */
+function media_gallery_uninstall() {
+  \Drupal::configFactory()->getEditable('image.style.media_gallery_image')->delete();
+  \Drupal::configFactory()->getEditable('core.entity_view_mode.media.media_colorbox')->delete();
+  \Drupal::configFactory()->getEditable('core.entity_view_display.media.image.media_colorbox')->delete();
+  \Drupal::configFactory()->getEditable('views.view.media_galleries')->delete();
+}
+
+/**
+ * Update config helper function.
+ *
+ * @param string $config_name
+ *   Config name.
+ */
+function _media_gallery_update_config($config_name) {
+  $config_path = drupal_get_path('module', 'media_gallery') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_storage->write($config_name, $source->read($config_name));
+}
+
+/**
+ * Update "All Galleries view".
+ */
+function media_gallery_update_8101(&$sandbox) {
+  _media_gallery_update_config('views.view.media_galleries');
+}

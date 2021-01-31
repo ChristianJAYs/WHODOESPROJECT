@@ -1,0 +1,8 @@
+
+photo_albums.protected_access:
+  path: '/albums/login'
+  defaults:
+    _title: 'Protected Photo Album - Enter Password'
+    _form: '\Drupal\photo_albums\Form\ProtectedAlbumLoginForm'
+  requirements:
+    _permission: 'access content'

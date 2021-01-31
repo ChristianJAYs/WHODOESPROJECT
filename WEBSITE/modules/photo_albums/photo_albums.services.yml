@@ -1,0 +1,12 @@
+services:
+  photo_albums.check_protected_album:
+    class: Drupal\photo_albums\EventSubscriber\ProtectedAlbumSubscriber
+    arguments: ['@path_alias.manager', '@current_user', '@path.current', '@redirect.destination', '@request_stack', '@page_cache_kill_switch']
+    tags:
+      - {name: event_subscriber}
+  logger.channel.photo_albums:
+    parent: logger.channel_base
+    arguments: ['photo_albums']
+  photo_albums.twowayhash:
+    class: Drupal\photo_albums\TwoWayHashService
+    arguments: []

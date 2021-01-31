@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Install functions for Photo Albums module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Site\Settings;
+
+/**
+ * Implements hook_schema().
+ */
+function photo_albums_schema() {
+  $schema['photo_albums_protected'] = [
+    'description' => 'Stores encrypted passwords for protected photo albums.',
+    'fields' => [
+      'nid' => [
+        'description' => 'The node ID of the protected photo album.',
+        'type' => 'int',
+        'length' => 11,
+        'unsigned' => TRUE,
+      ],
+      'pass' => [
+        'description' => 'The encrypted password for the protected photo album.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+    ],
+    'unique' => [
+      'nid' => ['nid'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function photo_albums_requirements($phase) {
+  if ($phase != 'runtime') {
+    return [];
+  }
+
+  $two_way_hashing_key = Settings::get('two_way_hashing_key');
+  $two_way_hashing_method = Settings::get('two_way_hashing_method');
+
+  if (is_null($two_way_hashing_key) || is_null($two_way_hashing_method)) {
+    $config_ok = FALSE;
+  }
+  else {
+    $config_ok = TRUE;
+  }
+
+  return [
+    'photo_albums_settings' => [
+      'title' => t('Photo Albums Configuration'),
+      'value' => $config_ok ? t('Configured correctly') : t('Not Configured'),
+      'description' => $config_ok ? '' : t('The Photo Albums module requires that you add an encryption key and method to your settings.php file. Please see the README.txt file for more information.'),
+      'severity' => $config_ok ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+    ],
+  ];
+}
+
+/**
+ * Add the paid regular transactions table to the database schema.
+ */
+function photo_albums_update_8001() {
+  $schema = photo_albums_schema();
+  $spec = $schema['photo_albums_protected'];
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('photo_albums_protected', $spec);
+  return "photo_albums_protected table added successfully.";
+}

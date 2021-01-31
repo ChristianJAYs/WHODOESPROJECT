@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: photo_album_thumbnail
+label: 'Photo Album Thumbnail (220x220)'
+effects:
+  aeb9aa18-d626-4a2e-983b-bc6b60cfc363:
+    uuid: aeb9aa18-d626-4a2e-983b-bc6b60cfc363
+    id: focal_point_crop
+    weight: 1
+    data:
+      width: 220
+      height: 220
+      crop_type: focal_point

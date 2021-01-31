@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.photo_album_image.field_file_size
+    - field.field.media.photo_album_image.field_height
+    - field.field.media.photo_album_image.field_media_image
+    - field.field.media.photo_album_image.field_mime_type
+    - field.field.media.photo_album_image.field_width
+    - image.style.photo_album_thumbnail
+    - media.type.photo_album_image
+  module:
+    - colorbox
+id: media.photo_album_image.default
+targetEntityType: media
+bundle: photo_album_image
+mode: default
+content:
+  field_media_image:
+    label: visually_hidden
+    weight: 0
+    settings:
+      colorbox_node_style: photo_album_thumbnail
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: page
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+    type: colorbox
+    region: content
+hidden:
+  created: true
+  field_file_size: true
+  field_height: true
+  field_mime_type: true
+  field_width: true
+  name: true
+  thumbnail: true
+  uid: true

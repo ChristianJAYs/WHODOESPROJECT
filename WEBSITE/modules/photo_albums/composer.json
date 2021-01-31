@@ -1,0 +1,16 @@
+{
+  "name": "drupal/photo_albums",
+  "type": "drupal-module",
+  "description": "Provide photo album content.",
+  "homepage": "https://www.drupal.org/project/photo_albums",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/photo_albums",
+    "source": "https://www.drupal.org/project/photo_albums"
+  },
+  "authors": [
+    {
+      "name" : "Scot Hubbard",
+      "homepage" : "https://www.drupal.org/u/scothubbard"
+    }
+  ]
+}

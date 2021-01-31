@@ -1,0 +1,5 @@
+
+photo_albums:
+  css:
+    component:
+      css/photo_albums.css: {}

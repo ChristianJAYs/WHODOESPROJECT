@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.photo_album_image.field_file_size
+    - field.field.media.photo_album_image.field_height
+    - field.field.media.photo_album_image.field_media_image
+    - field.field.media.photo_album_image.field_mime_type
+    - field.field.media.photo_album_image.field_width
+    - image.style.media_library
+    - media.type.photo_album_image
+  module:
+    - focal_point
+id: media.photo_album_image.default
+targetEntityType: media
+bundle: photo_album_image
+mode: default
+content:
+  field_file_size:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_height:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_media_image:
+    weight: 1
+    settings:
+      preview_image_style: media_library
+      progress_indicator: throbber
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  field_mime_type:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_width:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  uid: true

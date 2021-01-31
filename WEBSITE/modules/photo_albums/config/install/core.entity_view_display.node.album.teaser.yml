@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.album.body
+    - field.field.node.album.field_photos
+    - field.field.node.album.field_protect_album
+    - field.field.node.album.field_reset_password
+    - image.style.photo_album_thumbnail
+    - node.type.album
+  module:
+    - media
+    - user
+id: node.album.teaser
+targetEntityType: node
+bundle: album
+mode: teaser
+content:
+  field_photos:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: photo_album_thumbnail
+      image_link: content
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_protect_album: true
+  field_reset_password: true
+  links: true
+  sharethis: true

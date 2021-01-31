@@ -1,0 +1,15 @@
+name: Media Gallery
+type: module
+description: 'A simple gallery of media.'
+package: media
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:text
+  - drupal:media_library (>= 8.7)
+  - colorbox:colorbox
+configure: entity.media_gallery.settings
+
+# Information added by Drupal.org packaging script on 2021-01-23
+version: '8.x-1.4'
+project: 'media_gallery'
+datestamp: 1611401650

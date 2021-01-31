@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photos
+    - media.type.photo_album_image
+    - node.type.album
+id: node.album.field_photos
+field_name: field_photos
+entity_type: node
+bundle: album
+label: Photos
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      photo_album_image: photo_album_image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

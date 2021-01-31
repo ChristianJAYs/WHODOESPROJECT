@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: photo_album_image_small
+label: 'Photo Album Thumbnail (110x110)'
+effects:
+  6b921110-68c2-4d34-93fe-c3085fc2c442:
+    uuid: 6b921110-68c2-4d34-93fe-c3085fc2c442
+    id: focal_point_crop
+    weight: 1
+    data:
+      width: 110
+      height: 110
+      crop_type: focal_point
